@@ -1,0 +1,242 @@
+
+<div class="tab-pane fade  <?php if($this->uri->segment(2)=='ExpireNotification'){ ?> in active <?php } ?>" id="profile">
+<?php       if($user_membership->num_rows()==0){
+                redirect('applyMembership');
+            }
+                            $memrd= $user_membership->row();
+                            $membership_expire=$memrd->membership_expire; 
+                            $membership_buy=$memrd->membership_buy; 
+                            $membership_days=$memrd->membership_days; 
+                            $todaydate = date('Ymd');
+                            $leftdays=$membership_expire-$todaydate;
+                            $date1=date_create(date('Y-m-d'));
+                            $date2=date_create(date('Y-m-d',strtotime($membership_expire)));
+                            $diff=date_diff($date1,$date2);
+                            $chk =$diff->format("%R%a"); 
+                         
+                          if($chk>30){
+                              redirect('poojaBooking/Services-Date-Time');
+                          }
+                         if($chk>=0 && $chk<=30){
+                             $states='is expiring within '.$chk;
+                        } else if($chk<0){
+                            $states='was expired overdue '.$chk;
+                        }
+                         
+?>
+    <form method="post" action="<?=base_url();?>poojaBooking/Membership/<?=$this->uri->segment(3);?>/buyNow"> 
+       <h3 class="head text-left memberShipName">Welcome: <span><?=$userDetails->first_name?> <?=$userDetails->last_name?></span></h3>
+       <h2>Your membership details are as below.</h2>
+ <div class="row">
+    <div class="col-sm-12">
+            <div class="table-reasponsive">
+                <table class="table table-reasponsive table-bordered table-striped tableList">
+                    <thead>
+                        <tr>
+                            <th align="center" colspan="2">
+                                <p class="text-center" style="    color: #ffefe2;">
+                                    Your membership <?= $states;?> days. If you want to have Pooja booking with membership price, Would you like to renew your membership with current Pooja Booking? If so, You wil get membership price for current Pooja Booking.
+                                </p>
+                <div class="text-center">
+                    <?php foreach($data_membership->result() as $mem_data){ 
+                        if ($mem_data->id==$memrd->sel_member_id) {
+                          
+
+                        ?>
+                    <label class="btn btn-default btn-lg" for="sel_mem_<?=$mem_data->id;?>" style="    color: #ffefe2;">
+                            Renewal Amount For 
+                                <?=$mem_data->title;?> Package$ <br />SGD <?=$mem_data->membership_amount;?> For <?=$mem_data->membership_days;?>   Days     
+                    </label>
+    
+ <?php
+                        }
+
+                     } ?>
+ 
+                </div>
+                </th>
+            </tr>
+                        </thead>
+                            <tbody>
+                                 
+                            <?php if ($user_membership->num_rows()>0) { ?>
+                                <tr>
+                                    <td>Membership ID </td>
+                                    <td> : <?=$memrd->membership_id;?></td>
+                                </tr>
+                                <tr>
+                                    <td>Membership Type </td>
+                                    <td> : <?=$memrd->membership_title;?></td>
+                                </tr>
+                                 <tr>
+                                    <td>Expiring Date / Expired date </td>
+                                    <td> :  <?=date('d-M-Y',strtotime($memrd->membership_expire));?></td>
+                                </tr>
+                                 <tr>
+                                    <td>You are Member Since </td>
+                                    <td> : <?=date('d-M-Y',strtotime($memrd->membership_buy));?></td>
+                                </tr>
+                            <?php } ?>
+
+                                 <tr>
+                                    <td colspan="2">Personal Information </td>
+                                </tr>
+                                 <tr>
+                                    <td>Name (As Per NRIC) </td>
+                                    <td> <div class="row">
+                                                
+                                                <div class="col-sm-12">
+                                                    <?=$memrd->name_title;?>
+                                                     <?=$memrd->name_as_nric;?>
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td> <label for="gende">Gender</label> </td>
+                                    <td> <div class="row">
+                                                <div class="col-sm-12">
+                                                <?=$memrd->gende;?>
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>NRIC / PassPort Number </td>
+                                    <td> <div class="row">
+                                                <div class="col-sm-12">
+                                                     <?=$memrd->nric_passport;?>
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td> Date Of Birth</td>
+                                    <td> <div class="row">
+                                        <div class="col-sm-12">
+
+                                            <?=$memrd->days;?>-<?=$memrd->month;?>-<?=$memrd->year;?>
+
+                                        </div>
+                                    
+                                                
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td> Nationality</td>
+                                    <td> <div class="row">
+                                                <div class="col-sm-12">
+                                                    <?php 
+                                                    echo $memrd->nationality;  
+                                                        if ($memrd->nationality=='Other') {
+                                                            echo ' ('. $memrd->nationality_other.')';
+                                                        } else {
+                                                            
+                                                        }
+                                                    ?>
+
+                                                   
+                                                </div>
+                                                
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>Address</td>
+                                    <td> <div class="row">
+                                                <div class="col-sm-6">
+                                              
+                                        <?=$memrd->address_1;?>
+                                                </div>
+                                                <div class="col-sm-6">
+                                    
+                                        <?=$memrd->address_2;?>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <br />
+
+                                                    <?=$memrd->postal_code;?>
+                                                    
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td> Home Tel </td>
+                                    <td> <div class="row">
+                                                <div class="col-sm-12">
+                                                  +65 <?=$memrd->home_tel;?>
+                                                </div>
+                                               
+                                            </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> Mobile </td>
+                                    <td> <div class="row">
+                                                <div class="col-sm-12">
+                                                     +65 <?=$memrd->mobile;?>
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>Email </td>
+                                    <td> 
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <?=$memrd->email;?>
+                                               
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td> Marital Status</td>
+                                    <td> 
+                                        <div class="row">
+                                                <div class="col-sm-12">
+                                                     <?=$memrd->marital_status;?>
+                                                </div>
+                                               
+                                            </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">
+                                    <a href="<?=base_url();?>poojaBooking/Services-Date-Time" mat-flat-button="" color="primary" class="mat-focus-indicator mat-flat-button mat-button-base mat-primary text-white">
+                                            <span class="mat-button-wrapper">Skip & Proceed</span>
+                                            <div matripple="" class="mat-ripple mat-button-ripple"></div>
+                                            <div class="mat-button-focus-overlay"></div>
+                                        </a>  
+
+                                          <a href="<?=base_url();?>Dashboard/MyMembership" mat-flat-button="" color="primary" class="mat-focus-indicator mat-flat-button mat-button-base mat-primary text-white pull-right">
+                                            <span class="mat-button-wrapper">Renew / Proceed</span>
+                                            <div matripple="" class="mat-ripple mat-button-ripple"></div>
+                                            <div class="mat-button-focus-overlay"></div>
+                                        </a>  
+
+
+
+                                     <!--    <button _ngcontent-ngq-c157="" mat-flat-button="" color="primary" class="mat-focus-indicator mat-flat-button mat-button-base mat-primary pull-right">
+                                            <span class="mat-button-wrapper">Renew / Buy & Proceed</span>
+                                            <div matripple="" class="mat-ripple mat-button-ripple"></div>
+                                            <div class="mat-button-focus-overlay"></div>
+                                        </button>   -->
+                                    </td>
+                                </tr>
+                            </tfoot>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

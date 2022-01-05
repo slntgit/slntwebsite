@@ -1,0 +1,75 @@
+table{
+    display: table !important;
+    border: 0 !important;
+    td, th{
+        border: 0 !important;
+    }
+}
+
+.venue-section{
+    table{
+        display: table !important;
+        td, th{
+            border: 0 !important;
+        }
+    }
+}
+
+.tableList{
+    thead {
+        background-color: $primary-color !important;
+        th{
+            background-color: $primary-color !important;
+            color: $sub-main-color !important;
+            font-weight: 600 !important;
+            &:last-child {
+                text-align: end;
+                padding-right: 2px !important;
+            }
+            &:first-child {
+                text-align: start;
+                padding-left: 2px !important;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background-color: $white !important;
+            &:nth-child(odd) {
+                background-color: $child-odd-background !important;
+            }
+            td {
+                background-color: transparent !important;
+                color: $title-color !important;
+                &:last-child {
+                    text-align: end;
+                    padding-right: 2px !important;
+                }
+                &:first-child {
+                    text-align: start;
+                    padding-left: 2px !important;
+                }
+            }
+        }
+    }
+    tfoot {
+        tr{
+            td{
+                &:last-child {
+                    text-align: end;
+                    padding-right: 2px !important;
+                }
+                &:first-child {
+                    text-align: start;
+                    padding-left: 2px !important;
+                }
+            }
+        }
+    }
+}
+
+.priceTitle{
+    span{
+        font-weight: 600;
+    }
+}

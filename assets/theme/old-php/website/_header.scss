@@ -1,0 +1,19 @@
+.headerSection {
+  @media only screen and (max-width: 676px) {
+    .dropdown-menuxcd {
+      display: none;
+    }
+    .booking-drop:hover .dropdown-menuxcd {
+      display: block !important;
+      margin-left: -58px !important;
+    }
+  }
+  @media only screen and (min-width: 677px) {
+    .dropdown-menuxcd {
+      display: none;
+    }
+    .booking-drop:hover .dropdown-menuxcd {
+      display: block !important;
+    }
+  }
+}

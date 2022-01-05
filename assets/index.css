@@ -1,0 +1,77 @@
+ .mat-primary {
+   background-color: #db4242;
+   white-space: nowrap;
+   /* padding: 1.219em 1.72em; */
+   text-transform: capitalize;
+   font-size: 16px;
+   line-height: 22px !important;
+   border-radius: 31px;
+   margin-left: 2px;
+ }
+
+ .mat-warnig {
+   background-color: #48263d !important;
+   white-space: nowrap;
+   padding: 1.219em 1.72em;
+   text-transform: capitalize;
+   font-size: 16px;
+   line-height: 22px !important;
+   border-radius: 31px;
+   margin-left: 2px;
+ }
+
+ .margin-center {
+   margin: auto !important;
+ }
+
+ #demo {
+   height: 100%;
+   position: relative;
+   overflow: hidden;
+ }
+
+
+ .green {
+   background-color: #6fb936;
+ }
+
+ .thumb {
+   margin-bottom: 30px;
+ }
+
+ .page-top {
+   margin-top: 85px;
+ }
+
+
+ img.zoom {
+   width: 100%;
+   height: 200px;
+   border-radius: 5px;
+   object-fit: cover;
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   -ms-transition: all .3s ease-in-out;
+ }
+
+
+ .transition {
+   -webkit-transform: scale(1.2);
+   -moz-transform: scale(1.2);
+   -o-transform: scale(1.2);
+   transform: scale(1.2);
+ }
+
+ .modal-header {
+
+   border-bottom: none;
+ }
+
+ .modal-title {
+   color: #000;
+ }
+
+ .modal-footer {
+   display: none;
+ }

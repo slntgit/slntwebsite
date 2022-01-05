@@ -1,0 +1,25 @@
+.footer-section {
+    position: relative;
+    margin-top: 220px;
+    &::before {
+        content: '';
+        position: absolute;
+        margin: auto;
+        background-image: url(../assets/mandala02.png);
+        background-repeat: no-repeat;
+        width: 480px;
+        height: 480px;
+        top: -50%;
+        background-size: contain;
+        right: 0;
+        left: 0;
+        @include media-breakpoint-down(sm) {
+            width: 280px;
+            height: 280px;
+            top: -20%;
+        }
+    }
+    @include media-breakpoint-down (sm) {
+        margin-top: 30px;
+    }
+}

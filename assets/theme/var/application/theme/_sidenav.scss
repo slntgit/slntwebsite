@@ -1,0 +1,21 @@
+.mainwrapper{
+    &::before{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: $primary-color;
+    }
+    .leftpanel{
+        .nav{
+            li{
+                border: 0;
+            }
+            .active{
+                background: $primary-color;
+                color: $white;
+            }
+        }
+    }
+}

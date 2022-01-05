@@ -1,0 +1,52 @@
+label {
+  font-size: 16px;
+  color: $primary-color;
+  font-weight: 400 !important;
+}
+
+.telephone,
+input,
+select,
+textarea {
+  height: 60px !important;
+  border-radius: 30px !important;
+  padding: 0.85em 1.8em !important;
+  margin-bottom: 30px !important;
+  border: 2px solid $border-color !important;
+  &:focus {
+    border: 2px solid $primary-color !important;
+  }
+  &:hover {
+    border-color: $sub-main-color !important;
+  }
+}
+
+input[type=checkbox] {
+  height: 12px !important;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 22px !important;
+  height: 22px !important;
+  padding: 3px !important;
+  /* background-color only for content */
+  background-clip: content-box;
+  border-radius: 50%;
+  border: 2px solid $primary-color !important;
+  background-color: rgba($color: $sub-main-color, $alpha: 0.3) !important;
+  margin: 0 8px -5px 0 !important;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: $primary-color !important;
+}
+
+.form-control:focus {
+  border: 2px solid $primary-color !important;
+}

@@ -1,0 +1,78 @@
+header {
+  .headerBtn {
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    margin: auto 0 auto auto;
+    top: 30px;
+    @include media-breakpoint-down(sm) {
+      top: 66px;
+      right: -20px;
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+  .logo {
+    position: relative;
+    top: -20px;
+  }
+}
+
+nav {
+  .navbar-nav {
+    .nav-item {
+      margin: auto 18px;
+      .nav-link {
+        color: $sub-main-color !important;
+        @include media-breakpoint-down(sm) {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-item {
+  color: $primary-color;
+}
+
+.regLogBtn {
+  right: calc(100% - 98%);
+  position: absolute;
+  bottom: 30px;
+  .mat-primary {
+    background-color: $primary-color !important;
+    color: $white;
+    font-weight: 600 !important;
+    line-height: 12px !important;
+  }
+}
+
+.banner {
+  .banner-wrapper{
+    &::before {
+      content: '';
+      margin: auto;
+      width: 2.5px;
+      height: 48%;
+      z-index: 8;
+      border-radius: 8px 8px;
+      background: $sub-main-color;
+    }
+  }
+  &::after {
+    background: $sub-main-color;    
+    content: '';
+    position: absolute;
+    border-radius: 8px 8px;
+    margin: auto;
+    width: 2.5px;
+    height: 10%;
+    z-index: 8;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: -42px;
+  }
+}

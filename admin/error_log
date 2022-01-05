@@ -1,0 +1,4 @@
+[18-Apr-2020 15:21:17 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file in /home3/mgimeeru/public_html/beta/admin/application/views/products_list.php on line 119
+[02-Jun-2020 00:22:50 Asia/Calcutta] PHP Fatal error:  Call to a member function num_rows() on boolean in /home3/mgimeeru/public_html/admin/application/views/member_excel.php on line 242
+[02-Jun-2020 00:24:24 Asia/Calcutta] PHP Fatal error:  Call to a member function num_rows() on boolean in /home3/mgimeeru/public_html/admin/application/views/member_excel.php on line 242
+[02-Jun-2020 17:48:45 Etc/GMT] PHP Fatal error:  Call to undefined function create_captcha() in /home3/mgimeeru/public_html/admin/application/controllers/Pages.php on line 27

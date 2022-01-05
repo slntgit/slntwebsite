@@ -1,0 +1,212 @@
+.pujaBooking {
+  background-color: $main-color;
+}
+
+.board-inner {
+  .nav-tabs {
+    border: 0px;
+    .liner {
+      background-color: $primary-color;
+    }
+    li {
+      a {
+        span.round-tabs {
+          color: $title-color;
+          border: 2px solid $title-color;
+        }
+      }
+    }
+    li.active {
+      a span.round-tabs {
+        color: $white;
+        background-color: $primary-color !important;
+      }
+      &::after {
+        border-bottom-color: $primary-color;
+      }
+    }
+  }
+}
+
+.tab-content {
+  .head {
+    color: $primary-color;
+    font-weight: 600;
+    font-family: $primary-font !important;
+  }
+  #records {
+    margin-bottom: 30px;
+    background: rgba($color: $sub-primary-color, $alpha: 0.7) !important;
+    #finalResult {
+      li {
+        a {
+          background-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+  #settimeslot {
+    table {
+      display: table;
+    }
+    table,
+    td,
+    th {
+      border: 1px solid $primary-color;
+    }
+    ul {
+      .list-group-item {
+        border: 1px solid $primary-color !important;
+        input {
+          margin-bottom: 8px !important;
+        }
+      }
+      .disabled {
+        background-color: rgba($color: $primary-color, $alpha: 0.7);
+        .timer-slot {
+          color: $white;
+        }
+      }
+    }
+    input[type="radio"] {
+      width: 16px !important;
+      height: 16px !important;
+    }
+  }
+  #priest_user {
+    .img-thumbnail {
+      border: 0;
+      padding: 0 48px 30px;
+      img {
+        width: 180px;
+        height: 180px;
+        border-radius: 100%;
+        border: 4px solid $tor-color;
+        padding: 8px;
+        background: $main-color;
+      }
+    }
+    label.text-danger {
+      color: $title-color !important;
+    }
+  }
+  .venue-section {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    margin-top: 30px;
+    border-color: rgba($color: $primary-color, $alpha: 0.089);
+    .pickCab {
+      label {
+        margin-right: 15px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.bookingSub {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid rgba($color: $primary-color, $alpha: 0.089);
+}
+
+.pujaBookingPrist {
+  background-color: $white;
+  border-radius: 31px;
+  padding: 30px 0;
+  margin: 30px 15px auto;
+  box-shadow: 0px -1px 29px -3px rgba($color: $tor-color, $alpha: 0.3);
+  cursor: pointer;
+  label {
+    cursor: pointer;
+  }
+}
+
+.invoiceDetailsSection {
+  .invoice-details {
+    .invoice-id {
+      color: $title-color !important;
+    }
+    p {
+      color: $title-color;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.invoice-details {
+  .invoice-id,
+  .date,
+  .address {
+    color: $title-color !important;
+    span{
+        font-weight: 600;
+    }
+  }
+}
+
+.tableBookingPrice {
+  #totalamt {
+    width: 20%;
+  }
+  .panel {
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+  .pt-30 {
+    padding-top: 30px !important;
+  }
+}
+
+.priceWeight {
+  text-transform: capitalize !important;
+  color: $title-color !important;
+  font-weight: 600 !important;
+}
+
+.paypalImage {
+  background-image: url(./paypal.svg);
+  background-repeat: no-repeat;
+  background-size: 84%;
+  background-position: center;
+  background-color: $white !important;
+  width: 220px;
+  border: 0 !important;
+  &:hover {
+    background-color: $white !important;
+  }
+}
+
+.company-details {
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #48263d;
+  }
+}
+
+.paymentPaidPreview {
+  td {
+    color: $primary-color !important;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.headDate {
+  font-size: 20px !important;
+  color: $title-color;
+  span {
+    font-weight: 600;
+  }
+}
+
+
+.card{
+    background-color: transparent !important;
+    border: 0 !important;
+}

@@ -1,0 +1,398 @@
+// Home Pages
+
+// Banner Section
+
+.banner {
+  position: relative;
+  height: 80vh;
+  background: transparent;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 92%;
+    @extend .p1-gradient-bg;
+  }
+}
+
+// Search Option
+
+.serchOption {
+  h2 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    font-family: $title-font;
+    text-transform: capitalize;
+    @include media-breakpoint-down(sm) {
+      font-size: 28px;
+    }
+  }
+
+  .search-form{
+    form {
+      background: $border-color;
+      max-width: 70%;
+      width: 100%;
+      margin: auto;
+      padding: 0px 0px 0 23px;
+      display: flex;
+      border-radius: 31px;
+      .search-submit {
+        border: 0;
+        background:$border-color;
+        span {
+          font-size: 40px;
+          color: $primary-color !important;
+        }
+      }
+      input {
+        margin-bottom: 0 !important;
+        width: 111%;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 92%;
+      }
+    }
+  }
+}
+
+// Title
+
+.header-title {
+  .sub-title {
+    margin-bottom: 0;
+  }
+  .title {
+    font-family: $title-font;
+  }
+}
+
+// Ups
+
+.slntUps{
+  .wrapper {    
+    margin: auto;
+    max-width: 86%;
+    padding: 48px 32px;
+    border-radius: 12px 12px;
+    background: $white !important;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 42px;
+    }
+    .img {
+      margin: auto;
+      max-width: 148px;
+      margin-bottom: 18px;
+    }
+    .content {
+      h3 {
+        font-family: $title-font;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 22px;
+        @include media-breakpoint-down(sm) {
+          font-size: 30px;
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        color: $sub-main-color;
+      }
+    }
+  }
+  .wrapper.active {
+    box-shadow: 0px 0px 87px -28px rgba($sub-main-color, 0.77);
+  }
+}
+
+// About Section
+
+.about-section {
+  padding-bottom: 0 !important;
+  .img-wrapper {
+    max-width: unset;
+    float: unset;
+    padding: 20px 60px 20px 0;
+    @include media-breakpoint-down(sm) {
+      padding: 20px 20px;
+      margin-bottom: 30px;
+    }
+  }
+  .content-wrapper {
+    max-height: 320px;
+    overflow-y: scroll;
+    padding-right: 15px;
+  }
+}
+
+// Event Section
+
+.event-section {
+  position: relative;
+  overflow: hidden;
+  &::before{
+    content: '';
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    background-image: url(../assets/mandala.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -16%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0.77;
+    @include media-breakpoint-down(sm) {
+      width: 280px;
+      height: 280px;
+      top: -6%;
+    }
+  }
+  .header-title {
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 62%;
+    margin: auto;
+  }
+  .event-list-section {
+    position: relative;
+    max-width: 88%;
+    margin: auto;
+    margin-top: 30px;
+    .event-list {
+      li {
+        // @extend .align-item-center;
+        // @extend .justify-content-between;
+        display: flex;
+        background: $white;
+        height: 170px;
+        margin-bottom: 38px;
+        @include media-breakpoint-down(sm) {
+          display: unset;
+          position: relative;
+        }
+        img {
+          width: 270px;
+          height: 100%;
+          @include media-breakpoint-down(sm) {
+            width: 100%;
+            height: unset;
+          }
+        }
+        time {
+          background: $main-color;
+          color: $tor-color;
+          width: 80px;
+          height: 80px;
+          padding: 18px 8px;
+          border-radius: 100%;
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          left: 23.5%;
+          z-index: 1;
+          margin: auto;
+          .day {
+            font-size: 20pt;
+            font-weight: 700;
+          }
+          .month {
+            font-size: 14pt;
+            font-weight: 500;
+            color: $sub-main-color;
+          }
+          @include media-breakpoint-down(sm) {
+            bottom: unset;
+            top: 58px;
+            left: 8px;
+          }
+        }
+        .info {
+          background: $white;
+          padding: 18px 40px 18px 60px;
+          height: unset;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          .title {
+            color: $primary-color !important;
+            font-weight: 900;
+            font-family: $primary-font;
+            padding: 0 0;
+          }
+          .desc {
+            color: $sub-main-color !important;
+          }
+          .title {
+            font-size: 22pt;
+            text-transform: capitalize;
+          }
+          .text-warning {
+            font-size: 16pt;
+            color: $tor-color !important;
+          }
+          .dateEvent {
+            font-weight: 600;
+            color: $sub-main-color !important;
+          }
+        }
+        .social {
+          margin: auto;
+          bottom: 0;
+          .mt-event-button {
+            position: relative;
+            height: 100%;
+            .btn-events {
+              padding: 8px 30px;
+              font-weight: 600;
+              position: absolute;
+              margin: auto;
+              right: 0;
+              width: fit-content;
+              top: 0;
+              bottom: 0;
+              height: fit-content;
+              border-radius: 31px;
+              color: $white;
+              background-color: $tor-color;
+              border-color: $tor-color;
+              &:hover {
+                background-color: rgba($primary-color, 1);
+                border-color: rgba($primary-color, 1);
+              }
+            }
+          }
+          @include media-breakpoint-down(sm) {
+            background: $white;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            .mt-event-button {
+              margin-top: unset !important;
+            }
+            .btn-events {
+              position: unset !important;
+            }
+          }
+        }
+      }
+      a.btn-custom{
+        font-weight: 700;
+        padding: 12px 32px;
+        color: $primary-color;
+        border: 0px !important;
+        background-color: $main-color;
+        &:hover {
+          background-color: $tor-color;
+        }
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 80%;
+    }
+  }
+}
+
+// Donation Section
+
+.donation-section {
+  background-image: none;
+  .form-pricing {
+    background-color: transparent;
+    margin-top: 50px;
+  }
+  .price-slider {
+    max-width: 62%;
+    margin: auto;
+    margin-bottom: 30px;
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+    }
+    .ui-slider {
+      border: 0px;
+      background: rgba($primary-color, 0.2);
+      color: $primary-color;
+      margin-top: 4px;
+      .ui-slider-handle {
+        background-color: $primary-color !important;
+        border-radius: 10px !important;
+        .ui-slider-label-inner {
+          border-top: 10px solid $primary-color;
+        }
+      }
+    }
+    .ui-corner-all,
+    .ui-corner-bottom,
+    .ui-corner-right,
+    .ui-corner-br,
+    .ui-corner-all,
+    .ui-corner-bottom,
+    .ui-corner-left,
+    .ui-corner-bl {
+      border-radius: 12px !important;
+    }
+    .ui-slider-range-min {
+      background: $primary-color;
+    }
+    .ui-slider-horizontal {
+      height: 0.4em;
+    }
+  }
+  .price-form {
+    background-color: transparent;
+    border: 0px;
+    .control-label {
+      color: $title-color;
+      font-weight: 600;
+    }
+    .form-control {
+      max-width: 98px;
+      padding: 0.275rem 0.875rem;
+      border: 2px solid $primary-color;
+      border-radius: 25px;
+      font-weight: 600;
+    }
+  }
+}
+
+
+.banner-section-inner{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 45vh;
+
+  @include media-breakpoint-down(sm) {
+    background-position: top center !important;
+    min-height: 58vh;
+  }
+  &::before, &::after{
+    background-color: $sub-main-color;
+    content: '';
+    position: absolute;
+    width: 2.5px;
+    margin: auto;
+    bottom: 60px;
+    height: 50%;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  &::after {
+    bottom: -98%;
+    height: 20%;
+  }
+  .header-title {
+    position: relative;
+    .title{
+      color: $main-color;
+      position: absolute;
+      top: 192px;
+    }
+  }
+}

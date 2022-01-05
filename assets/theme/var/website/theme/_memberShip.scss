@@ -1,0 +1,47 @@
+.memberShipPage{
+    padding: 80px 0 2px !important;
+    @include media-breakpoint-down(sm) {
+        padding: 0px 0 2px !important;
+    }
+}
+.applyMemberShipSection{
+    .princing-item{
+        .pricing-divider {
+            h4, span{
+                color: $white;
+            }
+            .pricing-divider-img{
+                bottom: -23px;
+            }
+            .card-body{
+                position: relative;
+                z-index: 9;
+                margin-bottom: 30px;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.membershipSection{}
+
+.memberShipName{
+    span{
+        font-weight: normal !important;
+        text-transform: capitalize !important;
+    }
+}
+
+.memberShipSub{
+    color: $primary-color;
+    font-weight: 500;
+}
+
+.memberShipSelect {
+    display: table-caption;
+    .btn-default.btn-lg {
+        margin-bottom: 15px;
+    }
+}

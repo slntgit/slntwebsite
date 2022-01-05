@@ -1,0 +1,55 @@
+.loginSection{
+    background-color: $main-color;
+    .board, .panel, .panel-heading{
+        background-color: $main-color !important;
+        border-color: $main-color !important;  
+    }
+}
+
+.login-section{
+    .form-wapper{
+        max-width: 72%;
+        margin: auto;
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+        }
+    }
+    .forgot-password{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary-color;
+        &:hover{
+            color: $primary-color;
+            text-decoration: none;
+        }
+    }
+}
+
+.panel-heading{
+    a{
+        color: $primary-color !important;
+    }
+    .active{
+        color: $primary-color !important;
+    }
+}
+
+#register-form{
+    #mobile_code{
+        background-color: rgba($color: $primary-color, $alpha: 0.3) !important;
+    }
+}
+
+.mat-primary{
+    background-color: rgba($color: $tor-color, $alpha: 1.0) !important;
+    white-space: nowrap;
+    padding: 1.219em 1.172em;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 22px !important;
+    border-radius: 31px;
+    &:hover{
+        background-color: rgba($color: $primary-color, $alpha: 0.8) !important;
+    }
+}
